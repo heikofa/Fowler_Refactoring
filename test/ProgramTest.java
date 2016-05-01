@@ -27,6 +27,14 @@ public class ProgramTest {
                 "Amount owed is 24.5\n" +
                 "You earned 3 frequent renter points", testCustomer.statement());
     }
+    @Test
+    public void testHtmlStatement() throws Exception {
+        assertEquals("<H1>Rentals for <EM>max</EM></H1><P>\n" +
+                "testMovie: 15.0<BR>\n" +
+                "testMovie2: 9.5<BR>\n" +
+                "<P>You owe <EM>24.5</EM><P>\n" +
+                "On this rental you earned <EM>3</EM> frequent renter points<P>", testCustomer.htmlStatement());
+    }
 
     @org.junit.After
     public void tearDown() throws Exception {
